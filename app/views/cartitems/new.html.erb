@@ -1,0 +1,7 @@
+<%= form_with url: cartitems_path(product_id: @product.id) do |e| %>
+    <p>商品名：<%= @product.name %></p>
+    <p>価格：<%= @product.price %></p>
+    <p><%= e.label :quantity, '数量' %>
+    <%= e.text_field :quantity %></p>
+    <%= e.submit '登録' %>
+<% end %>
