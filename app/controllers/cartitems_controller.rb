@@ -1,4 +1,5 @@
 class CartitemsController < ApplicationController
+    before_action :setup_cart_item!, only: %i[create destroy]
     def new
         @cartitem = Cartitem.new
         @product = Product.find(params[:id])
