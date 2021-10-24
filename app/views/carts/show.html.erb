@@ -1,7 +1,4 @@
-<% @cartitems.each do |e| %>
-  <p>
-    <%= e.name %>
-    <%= e.price %>円
-    <%= e.quantity %>
-  </p>
-<% end %>
+<p>カートに入れた商品</p>
+<%= render partial: "carts/cartitem", collection: @cartitems, as: "cartitem"%>
+<p><%= "合計：#{@total}円" %></p>
+<p><%= link_to '買い物ページ', '/products' %></p>

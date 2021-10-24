@@ -1,0 +1,8 @@
+<li class="list-none">
+    <%= cartitem.product.name %>
+    <%= link_to "削除", cartitem_path(product_id: cartitem.product.id), method: :delete, data: { confirm: "商品を削除しますか？" } %>
+    <br>
+    <%= cartitem.product.price %>円 / 個
+    <br>
+    数量：<%= cartitem.quantity %>
+</li>

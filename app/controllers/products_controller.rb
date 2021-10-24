@@ -1,7 +1,6 @@
 class ProductsController < ApplicationController
     def index
         @products = Product.all
-        @cartitems = Cartitem.new
     end
     
     def new
@@ -15,7 +14,7 @@ class ProductsController < ApplicationController
         if @product.save
             redirect_to root_path
         else
-            render 'new'
+            render '/products/new'
         end
     end
     

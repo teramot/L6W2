@@ -1,4 +1,4 @@
 class Cart < ApplicationRecord
-    has_many :cartitems
-    has_many :cartitem_products, through: :cart_items, source: :product
+    has_many :cartitems, dependent: :destroy
+    has_many :cartitem_products, through: :cartitems, source: :product
 end
