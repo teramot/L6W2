@@ -12,6 +12,7 @@ class ProductsController < ApplicationController
                               price: params[:product][:price])
         
         if @product.save
+            flash[:notice] = '商品を新しく登録しました'
             redirect_to root_path
         else
             render '/products/new'
@@ -21,6 +22,7 @@ class ProductsController < ApplicationController
     def destroy
         product = Product.find(params[:id])
         product.destroy
+        flash[:notice] = '商品を削除しました'
         redirect_to root_path
     end
 end

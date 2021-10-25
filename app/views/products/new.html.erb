@@ -1,3 +1,12 @@
+<% if @product.errors.present? %>
+<h3>エラーがあります。</h3>
+<ul>
+    <% @product.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+    <% end %>
+</ul>
+<% end %>
+
 <%= form_for @product, url: {action: :create} do |e| %>
     <%= e.label :name, '商品名' %>
     <%= e.text_field :name %>

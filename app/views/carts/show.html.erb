@@ -2,3 +2,5 @@
 <%= render partial: "carts/cartitem", collection: @cartitems, as: "cartitem"%>
 <p><%= "合計：#{@total}円" %></p>
 <p><%= link_to '買い物ページ', '/products' %></p>
+
+<p><%= link_to '戻る', :back %></p>

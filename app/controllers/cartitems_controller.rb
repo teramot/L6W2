@@ -20,6 +20,7 @@ class CartitemsController < ApplicationController
             flash[:notice] = '商品をカートに追加しました'
             redirect_to '/carts/show'
         else
+            flash[:notice] = '数量には0以外の数字を入力してください'
             redirect_to new_cart_item_path(id: params[:cartitem][:product_id])
         end
     end

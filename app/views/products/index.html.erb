@@ -1,11 +1,15 @@
-  <% @products.each do |i| %>
-    <p>
-      <%= i.name %>
-      <%= i.price %>円
-      <%= link_to '削除', "/products/#{i.id}", method: :delete %>
-      <%= link_to 'カートに入れる', new_cartitem_path(id: i.id) %>
-    </p>
-  <% end %>
+<% if flash[:notice] %>
+   <%= flash[:notice] %>
+<% end %>
+
+<% @products.each do |i| %>
+  <p>
+    <%= i.name %>
+    <%= i.price %>円
+    <%= link_to '削除', "/products/#{i.id}", method: :delete %>
+    <%= link_to 'カートに入れる', new_cartitem_path(id: i.id) %>
+  </p>
+<% end %>
 
 <p><%= link_to '商品を新規登録する', "/products/new" %></p>
 <p><%= link_to 'カートを見る', "carts/show" %></p>
